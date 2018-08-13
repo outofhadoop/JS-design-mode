@@ -18,14 +18,7 @@
             // 这里只是简单举一个例子
             Button: function (dom, data) {
                 var btn = document.createElement('button'), param = data.data;
-                // btn.style = {
-                //     background: "blue",
-                //     border: "none",
-                //     width: "100px",
-                //     height: "40px",
-                //     display: "inline-block"
-                // };
-                // 减少页面重绘
+                // 减少页面重绘 ， 其实在这操作的元素还没有被添加到文档流，并没有被渲染，所以不许要使用requestAnimationFrame函数来减少重绘
                 window.requestAnimationFrame(function(){
                     btn.style.background = "blue";
                     btn.style.border = "none";
